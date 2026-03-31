@@ -3,579 +3,394 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Z's Projects</title>
+  <title>Zhi M. Huang — AI Application Developer</title>
+  <meta name="description" content="AI Application Developer portfolio. Educator turned developer — 21 shipped apps built with Claude Code.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f9f8f6;
-      --card: #ffffff;
-      --ink: #1a1a1a;
-      --muted: #6b6b6b;
-      --border: #e8e4de;
-      --accent: #1a1a1a;
-      --tag-bg: #f0ede8;
-      --tag-text: #4a4a4a;
-      --live-bg: #e8f5e9;
-      --live-text: #2e7d32;
-      --gh-bg: #f0ede8;
-      --gh-text: #4a4a4a;
-      --hover-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ── HEADER ── */
-    header {
-      background: #111;
-      color: #fff;
-      padding: 64px 40px 56px;
-      max-width: 100%;
-    }
-
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .header-eyebrow {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 16px;
-    }
-
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -0.03em;
-    }
-
-    header h1 span {
-      color: #888;
-    }
-
-    .header-sub {
-      font-size: 16px;
-      color: #aaa;
-      font-weight: 400;
-      margin-bottom: 36px;
-      max-width: 520px;
-    }
-
-    .stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .stat-num {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 4px;
-    }
-
-    /* ── MAIN ── */
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 56px 40px 80px;
-    }
-
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    /* ── FEATURED ── */
-    .featured {
-      margin-bottom: 64px;
-    }
-
-    .featured-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 280px;
-      transition: box-shadow 0.2s ease;
-    }
-
-    .featured-card:hover {
-      box-shadow: var(--hover-shadow);
-    }
-
-    .featured-visual {
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px;
-      min-height: 280px;
-    }
-
-    .featured-visual-text {
-      text-align: center;
-      color: #fff;
-    }
-
-    .featured-visual-text .big-emoji {
-      font-size: 56px;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .featured-visual-text p {
-      font-size: 13px;
-      color: #888;
-      font-style: italic;
-    }
-
-    .featured-content {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .featured-content .tag {
-      margin-bottom: 16px;
-    }
-
-    .featured-content h2 {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-
-    .featured-content p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
-    .link-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn-live {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--live-bg);
-      color: var(--live-text);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 7px 14px;
-      border-radius: 20px;
-      transition: opacity 0.15s;
-    }
-
-    .btn-live:hover { opacity: 0.75; }
-
-    .btn-gh {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--gh-bg);
-      color: var(--gh-text);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 7px 14px;
-      border-radius: 20px;
-      transition: opacity 0.15s;
-    }
-
-    .btn-gh:hover { opacity: 0.75; }
-
-    /* ── GRID ── */
-    .grid-section {
-      margin-bottom: 64px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-    }
-
-    .card:hover {
-      box-shadow: var(--hover-shadow);
-      transform: translateY(-2px);
-    }
-
-    .card-icon {
-      font-size: 28px;
-      line-height: 1;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .tag.toolkit { background: #e8f0fe; color: #1a56db; }
-    .tag.website { background: #fef3e2; color: #b45309; }
-    .tag.webapp  { background: #f0ede8; color: #4a4a4a; }
-
-    .card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.25;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    /* ── LIST SECTION ── */
-    .list-section {
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
-    }
-
-    .list-item {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .list-item-left {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      flex: 1;
-      min-width: 0;
-    }
-
-    .list-name {
-      font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .list-desc {
-      font-size: 13px;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .list-links {
-      display: flex;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .list-link {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color 0.15s;
-    }
-
-    .list-link:hover { color: var(--ink); }
-    .list-link.live { color: var(--live-text); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #111;
-      color: #666;
-      text-align: center;
-      padding: 32px 40px;
-      font-size: 13px;
-    }
-
-    footer a { color: #888; }
-    footer a:hover { color: #fff; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      header { padding: 40px 24px 36px; }
-      main { padding: 40px 24px 60px; }
-
-      .featured-card {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-visual { min-height: 180px; padding: 32px; }
-
-      .list-desc { display: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ── HEADER ── -->
-<header>
-  <div class="header-inner">
-    <p class="header-eyebrow">Portfolio</p>
-    <h1>Z's been building. <span>✦</span></h1>
-    <p class="header-sub">Web apps, ministry tools, and spiritual companions — all built with code, all deployed and live.</p>
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-num">10</span>
-        <span class="stat-label">Projects</span>
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero" class="hero">
+  <div class="hero-inner">
+    <!-- Left column -->
+    <div class="hero-text">
+      <div class="hero-badge">⚡ OPEN TO OPPORTUNITIES</div>
+      <p class="hero-comment">// Hello, I'm</p>
+      <p class="hero-const">const developer = "AI Application Developer";</p>
+      <h1 class="hero-name">Zhi M. Huang</h1>
+      <div class="hero-tagline">
+        <span class="hero-dash"></span>
+        <span class="hero-tagline-text">Educator → AI Developer</span>
       </div>
-      <div class="stat">
-        <span class="stat-num">10</span>
-        <span class="stat-label">GitHub Repos</span>
+      <p class="hero-subtitle">Bilingual · 21 Shipped Apps · Claude Code</p>
+
+      <!-- Code snippet -->
+      <div class="code-block">
+        <div class="code-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre class="code-content" id="typed-code"></pre>
       </div>
-      <div class="stat">
-        <span class="stat-num">10</span>
-        <span class="stat-label">Deployed</span>
+
+      <!-- CTAs -->
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View Projects ↓</a>
+        <a href="assets/resume.pdf" target="_blank" class="btn btn-outline">📄 Resume</a>
+        <a href="https://www.linkedin.com/in/zhi-huang-013a6170" target="_blank" rel="noopener" class="btn btn-outline">in LinkedIn</a>
       </div>
-      <div class="stat">
-        <span class="stat-num">2025–26</span>
-        <span class="stat-label">Timeline</span>
+    </div>
+
+    <!-- Right column -->
+    <div class="hero-right">
+      <div class="hero-photo-frame">
+        <img src="assets/photo.jpg" alt="Zhi M. Huang" class="hero-photo">
+        <div class="hero-photo-badge">● Open to Work</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">21</span>
+          <span class="hero-stat-label">Projects</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">13</span>
+          <span class="hero-stat-label">Deployed</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">3</span>
+          <span class="hero-stat-label">Languages</span>
+        </div>
       </div>
     </div>
   </div>
-</header>
+</section>
 
-<!-- ── MAIN ── -->
-<main>
+<!-- ── ABOUT ── -->
+<section id="about" class="section">
+  <div class="section-title">
+    <h2>About Me</h2>
+    <p>Educator turned AI developer</p>
+    <div class="section-divider"></div>
+  </div>
 
-  <!-- FEATURED -->
-  <section class="featured">
-    <p class="section-label">Featured</p>
-    <a href="https://pearl-of-great-price-ministries.pages.dev" target="_blank" rel="noopener">
-      <div class="featured-card">
-        <div class="featured-visual">
-          <div class="featured-visual-text">
-            <span class="big-emoji">✝️</span>
-            <p>"The kingdom of heaven is like a merchant<br>seeking beautiful pearls."</p>
-          </div>
+  <div class="about-grid">
+    <!-- Bio -->
+    <div class="about-bio">
+      <p>After 17 years teaching in multilingual classrooms across the US and China, I discovered a new way to build — with AI. In 12 months, I shipped 21 web applications using Claude Code, solving real problems for international students, churches, and communities.</p>
+      <p>I bring a rare combination: deep cross-cultural fluency (English, Mandarin, Cantonese), a teacher's instinct for clear UX, and the ability to ship production apps fast with AI-assisted development. I'm looking for roles where I can build tools that matter.</p>
+
+      <div class="skill-tags">
+        <span class="skill-tag">⚡ AI-assisted development</span>
+        <span class="skill-tag">⚡ Bilingual EN/中文 apps</span>
+        <span class="skill-tag">⚡ Rapid prototyping & shipping</span>
+        <span class="skill-tag">⚡ UX-driven design</span>
+        <span class="skill-tag">⚡ Cross-cultural communication</span>
+      </div>
+    </div>
+
+    <!-- Education + Languages -->
+    <div class="about-sidebar">
+      <div class="about-section-label">🎓 <span>Education</span></div>
+      <div class="edu-card card">
+        <h4>M.S. in Multidisciplinary Studies</h4>
+        <p class="edu-school">SUNY College at Buffalo</p>
+        <p class="edu-year">2014</p>
+      </div>
+      <div class="edu-card card">
+        <h4>B.A. in English Literature</h4>
+        <p class="edu-school">University of California, Irvine</p>
+        <p class="edu-year">2000</p>
+      </div>
+
+      <div class="about-section-label" style="margin-top: 24px;">🌐 <span>Languages</span></div>
+      <div class="lang-row">
+        <span class="lang-badge">English</span>
+        <span class="lang-badge">Mandarin 普通话</span>
+        <span class="lang-badge">Cantonese 粤语</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="tech-stack">
+    <span class="tech-item">🤖 Claude Code / API</span>
+    <span class="tech-item">📝 HTML / CSS / TS</span>
+    <span class="tech-item">☁️ Cloudflare Pages</span>
+    <span class="tech-item">🗺️ Leaflet / OSM</span>
+    <span class="tech-item">🔀 Git / GitHub</span>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects" class="section">
+  <div class="section-title">
+    <h2>Projects</h2>
+    <p>Selected case studies with measurable outcomes</p>
+    <div class="section-divider"></div>
+  </div>
+
+  <!-- Case Study 1: Career Ready -->
+  <div class="case-study">
+    <div class="case-study-image">
+      <img src="assets/screenshots/career-ready.png" alt="Career Ready app screenshot">
+    </div>
+    <div class="case-study-content">
+      <div class="case-study-tags">
+        <span class="tag">Web App</span>
+        <span class="tag">Claude API</span>
+      </div>
+      <h3>Career Ready</h3>
+      <p>8 interactive job prep tools with Claude API integration for college graduates. Resume builder, interview simulator, cover letter generator, and more.</p>
+      <div class="case-study-impact">
+        <span class="impact-label">Impact:</span>
+        <span>8 tools · Claude API · Bilingual EN/中文</span>
+      </div>
+      <div class="case-study-links">
+        <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live →</a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study 2: CareNavigatorCA (reversed) -->
+  <div class="case-study case-study-reverse">
+    <div class="case-study-image">
+      <img src="assets/screenshots/care-navigator.png" alt="CareNavigatorCA app screenshot">
+    </div>
+    <div class="case-study-content">
+      <div class="case-study-tags">
+        <span class="tag">Web App</span>
+        <span class="tag">Eligibility Engine</span>
+      </div>
+      <h3>CareNavigatorCA</h3>
+      <p>Intelligent benefits eligibility platform. 5-step quiz matching users with 100+ government programs for individuals with disabilities.</p>
+      <div class="case-study-impact">
+        <span class="impact-label">Impact:</span>
+        <span>100+ programs · 5-step matching · Accessible design</span>
+      </div>
+      <div class="case-study-links">
+        <a href="https://care-navigator.pages.dev" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live →</a>
+        <a href="https://github.com/Joshli316/CareNavigatorCA" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study 3: QiMa -->
+  <div class="case-study">
+    <div class="case-study-image">
+      <img src="assets/screenshots/qima.png" alt="QiMa app screenshot">
+    </div>
+    <div class="case-study-content">
+      <div class="case-study-tags">
+        <span class="tag">Web App</span>
+        <span class="tag">Education</span>
+      </div>
+      <h3>QiMa (起码)</h3>
+      <p>Bilingual tutorial taking users from zero coding knowledge to shipping prototypes with Claude Code in 14 days. 45+ command glossary.</p>
+      <div class="case-study-impact">
+        <span class="impact-label">Impact:</span>
+        <span>14-day curriculum · 45+ commands · Bilingual EN/中文</span>
+      </div>
+      <div class="case-study-links">
+        <a href="https://claude-code-launch.pages.dev" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live →</a>
+        <a href="https://github.com/Joshli316/claude-code-launch" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study 4: LuoJiao (reversed) -->
+  <div class="case-study case-study-reverse">
+    <div class="case-study-image">
+      <img src="assets/screenshots/luojiao.png" alt="LuoJiao app screenshot">
+    </div>
+    <div class="case-study-content">
+      <div class="case-study-tags">
+        <span class="tag">Web App</span>
+        <span class="tag">Leaflet / Maps</span>
+      </div>
+      <h3>LuoJiao (落脚)</h3>
+      <p>Interactive cultural map for Chinese students in LA. Leaflet + OpenStreetMap with curated locations, categories, and bilingual content.</p>
+      <div class="case-study-impact">
+        <span class="impact-label">Impact:</span>
+        <span>Interactive map · Curated LA locations · Leaflet + OSM</span>
+      </div>
+      <div class="case-study-links">
+        <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live →</a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- More Projects -->
+  <div class="more-projects">
+    <div class="more-projects-header">
+      <h3>More Projects</h3>
+      <p>Additional apps and tools I've shipped</p>
+    </div>
+
+    <div class="more-grid">
+      <a href="https://github.com/Joshli316/CodeLaunch-Play" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">CodeFu (码功)</span>
+          <span class="more-desc">Gamified Claude Code mastery</span>
         </div>
-        <div class="featured-content">
-          <span class="tag website">Website</span>
-          <h2>The Pearl of Great Price</h2>
-          <p>A ministry website with an extensive AI-generated image gallery organized across theological and cultural categories — Old Testament, missions, arts, history, and more.</p>
-          <div class="link-row">
-            <span class="btn-live">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-              Live Site
-            </span>
-            <span class="btn-gh">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </span>
-          </div>
+        <span class="more-link">GitHub →</span>
+      </a>
+      <a href="https://github.com/Joshli316/codequest" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">CodePlay (码玩)</span>
+          <span class="more-desc">Gamified learning, 12 game types</span>
         </div>
+        <span class="more-link">GitHub →</span>
+      </a>
+      <a href="https://github.com/Joshli316/AiQi" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">AiQi (AI起)</span>
+          <span class="more-desc">Claude Code tutorial for grads</span>
+        </div>
+        <span class="more-link">GitHub →</span>
+      </a>
+      <a href="https://agentpath.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">AgentPath (智路)</span>
+          <span class="more-desc">12-week AI learning companion</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://prayer-journal.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Prayer Journal</span>
+          <span class="more-desc">Daily prayer journal PWA</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://homeready.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Home Ready (归途)</span>
+          <span class="more-desc">Return-journey journal</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://missionary-launchpad.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Missionary Launchpad</span>
+          <span class="more-desc">30-day setup for new missionaries</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://github.com/Joshli316/rpg" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">RPG (Revival Prayer Group)</span>
+          <span class="more-desc">Prayer triad matching app</span>
+        </div>
+        <span class="more-link">GitHub →</span>
+      </a>
+      <a href="https://daniel-wei-comic.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">DW Comic (建造者)</span>
+          <span class="more-desc">Bilingual Marvel-style comic</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://welcome-hub.yellow-longitudinal.workers.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Welcome Hub</span>
+          <span class="more-desc">Community platform for intl students</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://fc-ism-in-a-box.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">ISM In A Box</span>
+          <span class="more-desc">Church ministry starter toolkit</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://fc-starter-pack.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Ministry Starter Pack</span>
+          <span class="more-desc">12 tools for campus missionaries</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://get-it-done-a5x.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Get It Done</span>
+          <span class="more-desc">Daily planner with drag-and-drop</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://pearl-of-great-price-ministries.pages.dev" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Pearl of Great Price</span>
+          <span class="more-desc">Ministry site with AI image gallery</span>
+        </div>
+        <span class="more-link live">Live →</span>
+      </a>
+      <a href="https://github.com/fc-us/uncover" target="_blank" rel="noopener" class="more-item">
+        <div class="more-item-info">
+          <span class="more-name">Uncover</span>
+          <span class="more-desc">Visual self-discovery conversation tool</span>
+        </div>
+        <span class="more-link">GitHub →</span>
+      </a>
+      <a href="#" class="more-item" style="visibility: hidden;">
+        <div class="more-item-info"><span class="more-name"></span></div>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="section">
+  <div class="section-title">
+    <h2>Get In Touch</h2>
+    <p>Let's build something together</p>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="contact-cards">
+    <a href="mailto:zhiminghuang317@gmail.com" class="contact-card card">
+      <span class="contact-icon">✉️</span>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">zhiminghuang317@gmail.com</div>
       </div>
     </a>
-  </section>
-
-  <!-- ALSO BUILT -->
-  <section class="grid-section">
-    <p class="section-label">Also Built</p>
-    <div class="grid">
-
-      <!-- Care Navigator CA -->
-      <div class="card">
-        <span class="card-icon">🏛️</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Government Benefits Navigator</h3>
-        <p>Helps Californians discover and apply for government assistance programs. Built with Next.js 16 and TypeScript.</p>
-        <div class="link-row">
-          <a href="https://care-navigator-ca.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/care-navigator-ca" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
+    <a href="https://www.linkedin.com/in/zhi-huang-013a6170" target="_blank" rel="noopener" class="contact-card card">
+      <span class="contact-icon">💼</span>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">Zhi Huang</div>
       </div>
-
-      <!-- Selah -->
-      <div class="card">
-        <span class="card-icon">🕊️</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Selah — Pause and Reflect</h3>
-        <p>A personal Christian spiritual companion with Prayer, Word, and Reflect tabs. Bilingual EN / 中文.</p>
-        <div class="link-row">
-          <a href="https://selah-du7.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/Selah" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Prayer Journal -->
-      <div class="card">
-        <span class="card-icon">📖</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Prayer Journal</h3>
-        <p>A beautiful daily prayer journal PWA for recording scripture, praise, prayer requests, and answered prayers.</p>
-        <div class="link-row">
-          <a href="https://prayer-journal.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/prayer-journal" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
-      </div>
-
-      <!-- To Do List -->
-      <div class="card">
-        <span class="card-icon">✅</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Get It Done.</h3>
-        <p>A single-file daily planner with priorities, due dates, subtasks, drag-and-drop, dark mode, and bilingual support.</p>
-        <div class="link-row">
-          <a href="https://get-it-done-a5x.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/to-do-list-app" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Home Ready -->
-      <div class="card">
-        <span class="card-icon">🏠</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Home Ready (归途)</h3>
-        <p>A bilingual return-journey journal for international students preparing to go back to China. Warm ink-and-paper aesthetic.</p>
-        <div class="link-row">
-          <a href="https://homeready.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/homeready" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Missionary Launchpad -->
-      <div class="card">
-        <span class="card-icon">🚀</span>
-        <span class="tag webapp">Web App</span>
-        <h3>Missionary Launchpad</h3>
-        <p>A 30-day setup system for new missionaries. Single-file app with guided onboarding and localStorage persistence.</p>
-        <div class="link-row">
-          <a href="https://missionary-launchpad.pages.dev" target="_blank" rel="noopener" class="btn-live">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></svg>
-            Live
-          </a>
-          <a href="https://github.com/Joshli316/Missionary-Launchpad" target="_blank" rel="noopener" class="btn-gh">GitHub</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LIST SECTION -->
-  <section class="list-section">
-    <p class="section-label" style="margin-bottom:0;">More Projects</p>
-
-    <div class="list-item">
-      <div class="list-item-left">
-        <span class="list-name">Companion Guide</span>
-        <span class="list-desc">Welcome hub for new international students arriving on campus</span>
-      </div>
-      <div class="list-links">
-        <a href="https://welcome-hub.yellow-longitudinal.workers.dev" target="_blank" rel="noopener" class="list-link live">Live →</a>
-        <a href="https://github.com/Joshli316/welcome-hub" target="_blank" rel="noopener" class="list-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="list-item">
-      <div class="list-item-left">
-        <span class="list-name">FC ISM In A Box</span>
-        <span class="list-desc">6-phase, 28-step toolkit to help churches build international student ministry</span>
-      </div>
-      <div class="list-links">
-        <a href="https://fc-ism-in-a-box.pages.dev" target="_blank" rel="noopener" class="list-link live">Live →</a>
-        <a href="https://github.com/Joshli316/fc-ism-in-a-box" target="_blank" rel="noopener" class="list-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="list-item">
-      <div class="list-item-left">
-        <span class="list-name">FC Starter Pack</span>
-        <span class="list-desc">12 vetted tools to help campus missionaries serve international students</span>
-      </div>
-      <div class="list-links">
-        <a href="https://fc-starter-pack.pages.dev" target="_blank" rel="noopener" class="list-link live">Live →</a>
-        <a href="https://github.com/Joshli316/fc-starter-pack" target="_blank" rel="noopener" class="list-link">GitHub →</a>
-      </div>
-    </div>
-
-  </section>
-
-</main>
+    </a>
+  </div>
+</section>
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p>Built with Claude · Deployed on Cloudflare Pages · <a href="https://github.com/Joshli316" target="_blank" rel="noopener">GitHub</a></p>
+  <div class="footer-inner">
+    <span>© 2026 Zhi M. Huang. All rights reserved.</span>
+    <span>Built with Claude Code · Deployed on Cloudflare Pages</span>
+  </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
