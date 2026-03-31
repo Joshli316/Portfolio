@@ -1,0 +1,6 @@
+.env
+.env.local
+.env.production
+.wrangler/
+.superpowers/
+node_modules/
