@@ -46,7 +46,6 @@ function typeCode() {
 
 function colorize(text, line) {
   if (line.key) {
-    // Color the key and string value
     const colonIdx = text.indexOf(':');
     if (colonIdx === -1) return text;
     const key = text.substring(0, colonIdx);
@@ -66,7 +65,7 @@ function initNav() {
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
-  });
+  }, { passive: true });
 }
 
 // ── SMOOTH SCROLL ──
