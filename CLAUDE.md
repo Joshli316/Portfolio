@@ -14,7 +14,13 @@ Personal portfolio site for job search. Positions Z as "AI Application Developer
 - Remaining projects in compact 2-column grid
 - Hero has typing animation for code snippet (not rotating billboard)
 - English only (no bilingual toggle) — optimized for job search audience
-- Contact section: email + LinkedIn cards only
+- Contact section: email + LinkedIn + GitHub cards
+
+## Additional Files
+- `404.html` — styled 404 page (standalone, no CSS import)
+- `_headers` — Cloudflare Pages security headers
+- `robots.txt`, `sitemap.xml` — SEO
+- JSON-LD Person schema in `<head>`
 
 ## Specs & Plans
 - Design spec: `docs/superpowers/specs/2026-03-30-portfolio-redesign-design.md`
