@@ -13,6 +13,13 @@ function typeCode() {
   const el = document.getElementById('typed-code');
   if (!el) return;
 
+  // Respect reduced motion preference — show all code instantly
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    el.innerHTML = codeLines.map(line => colorize(line.text, line)).join('\n');
+    return;
+  }
+
   let lineIndex = 0;
   let charIndex = 0;
 
@@ -58,14 +65,31 @@ function colorize(text, line) {
   return text;
 }
 
-// ── STICKY NAV ──
+// ── STICKY NAV + ACTIVE SECTION ──
 function initNav() {
   const nav = document.getElementById('nav');
   if (!nav) return;
 
-  window.addEventListener('scroll', () => {
+  const navLinks = nav.querySelectorAll('.nav-links a');
+  const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+  function updateNav() {
     nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+
+    const navHeight = nav.offsetHeight;
+    let current = '';
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= navHeight + 40) {
+        current = '#' + section.id;
+      }
+    }
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 }
 
 // ── SMOOTH SCROLL ──
@@ -75,7 +99,10 @@ function initSmoothScroll() {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const navHeight = document.getElementById('nav')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: motionOk ? 'smooth' : 'auto' });
       }
     });
   });

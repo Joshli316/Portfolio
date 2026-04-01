@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhi M. Huang — Resume</title>
+  <style>
+    @page { margin: 0.35in 0.5in; size: letter; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 10pt;
+      line-height: 1.35;
+      color: #1a1a1a;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.35in 0.5in;
+    }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 6px; }
+    .header h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .header .subtitle {
+      font-size: 10.5pt;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+    .header .contact {
+      font-size: 9pt;
+      color: #333;
+      line-height: 1.5;
+    }
+    .header .contact a { color: #333; text-decoration: none; }
+    .divider {
+      border: none;
+      border-top: 2px solid #333;
+      margin: 6px 0;
+    }
+    .divider-thin {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 6px 0;
+    }
+
+    /* Section headers */
+    h2 {
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+      margin-top: 6px;
+    }
+
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 24px;
+    }
+
+    /* Profile */
+    .profile {
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #333;
+      margin-bottom: 0;
+    }
+
+    /* Skills list */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px 20px;
+      font-size: 9.5pt;
+    }
+    .skills-grid li {
+      list-style: disc;
+      margin-left: 16px;
+    }
+
+    /* Project entries */
+    .project { margin-bottom: 5px; }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .project-name {
+      font-weight: 700;
+      font-size: 10pt;
+    }
+    .project-link {
+      font-size: 8.5pt;
+      color: #555;
+      font-family: 'Courier New', monospace;
+    }
+    .project-meta {
+      font-size: 9pt;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 1px;
+    }
+    .project ul {
+      margin-left: 16px;
+      font-size: 9.5pt;
+    }
+    .project li { margin-bottom: 1px; }
+
+    /* Experience entries */
+    .exp { margin-bottom: 4px; }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .exp-title { font-weight: 700; font-size: 10pt; }
+    .exp-dates { font-size: 9pt; color: #555; }
+    .exp-org { font-size: 9.5pt; color: #444; margin-bottom: 1px; }
+    .exp ul {
+      margin-left: 16px;
+      font-size: 9.5pt;
+    }
+    .exp li { margin-bottom: 1px; }
+
+    /* Education */
+    .edu { margin-bottom: 3px; font-size: 9.5pt; }
+    .edu strong { font-size: 10pt; }
+    .edu .school { color: #555; font-size: 9pt; }
+
+    /* Compact list */
+    .compact-list {
+      margin-left: 16px;
+      font-size: 10pt;
+    }
+    .compact-list li { margin-bottom: 1px; }
+
+    /* Languages inline */
+    .lang { font-size: 9.5pt; }
+
+    @media print {
+      body { padding: 0; }
+      a { color: #333 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>ZHI M. HUANG</h1>
+  <div class="subtitle">AI Application Developer &nbsp;|&nbsp; Educator</div>
+  <div class="contact">
+    (626) 750-6129 &nbsp;|&nbsp; <a href="mailto:zhiminghuang317@gmail.com">zhiminghuang317@gmail.com</a> &nbsp;|&nbsp; Monterey Park, CA
+    <br>
+    <a href="https://portfolio-42a.pages.dev">portfolio-42a.pages.dev</a> &nbsp;|&nbsp;
+    <a href="https://github.com/Joshli316">github.com/Joshli316</a> &nbsp;|&nbsp;
+    <a href="https://linkedin.com/in/zhi-huang-013a6170">LinkedIn</a>
+  </div>
+</div>
+<hr class="divider">
+
+<!-- PROFILE -->
+<p class="profile">
+  Educator with 17 years of classroom experience who taught himself to build and ship web apps using Claude Code. Built 21 apps in 12 months — 13 deployed to production — serving international students, churches, and communities. Trilingual in English, Mandarin, and Cantonese. Combines a teacher's instinct for clarity with hands-on AI-assisted development.
+</p>
+
+<!-- TECHNICAL SKILLS -->
+<h2>Technical Skills</h2>
+<ul class="skills-grid">
+  <li>Claude Code / Claude API</li>
+  <li>HTML, CSS, JavaScript, TypeScript</li>
+  <li>Next.js, Node.js</li>
+  <li>Git, GitHub</li>
+  <li>Cloudflare Pages, Wrangler CLI</li>
+  <li>Leaflet / OpenStreetMap</li>
+  <li>Responsive design, WCAG accessibility</li>
+  <li>SEO (JSON-LD, Open Graph, sitemaps)</li>
+  <li>PWA development</li>
+  <li>Bilingual i18n (EN/中文)</li>
+</ul>
+
+<!-- AI APPLICATION DEVELOPMENT -->
+<h2>AI Application Development</h2>
+<p style="font-size:9.5pt; color:#444; margin-bottom:6px;">21 apps built and shipped with Claude Code &nbsp;·&nbsp; 13 deployed to production &nbsp;·&nbsp; 2025–2026</p>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">Career Ready</span>
+    <span class="project-link">careerready.pages.dev</span>
+  </div>
+  <div class="project-meta">Next.js · Claude API · Bilingual EN/中文</div>
+  <ul>
+    <li>Built 8 job prep modules (self-assessment, resumes, interviews, job search, offer negotiation, contact tracking) with Claude API and bilingual EN/中文 switching</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">CareNavigatorCA</span>
+    <span class="project-link">care-navigator.pages.dev</span>
+  </div>
+  <div class="project-meta">HTML/JS · Accessibility-focused · 100+ programs database</div>
+  <ul>
+    <li>Created a 5-step eligibility quiz matching Californians with disabilities to 100+ government programs; screen-reader tested and keyboard-navigable</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">QiMa (起码) — Claude Code Tutorial</span>
+    <span class="project-link">claude-code-launch.pages.dev</span>
+  </div>
+  <div class="project-meta">HTML/JS · 14-day curriculum · Bilingual EN/中文</div>
+  <ul>
+    <li>Wrote a 14-day tutorial (zero to shipped prototype) with 45+ command glossary, bilingual in English and Mandarin</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">LuoJiao (落脚) — Cultural Map</span>
+    <span class="project-link">github.com/Joshli316/LuoJiao</span>
+  </div>
+  <div class="project-meta">Leaflet + OpenStreetMap · Bilingual · Curated LA locations</div>
+  <ul>
+    <li>Built an interactive map for Chinese students arriving in LA — restaurants, libraries, churches, and services in Mandarin and English</li>
+  </ul>
+</div>
+
+<p style="font-size:9pt; color:#555; margin-top:2px;">
+  <strong>Also shipped:</strong> AgentPath, Prayer Journal (PWA), Home Ready, Missionary Launchpad, DW Comic, Welcome Hub, Get It Done, and 6 more — all on <a href="https://github.com/Joshli316" style="color:#555;">GitHub</a>.
+</p>
+
+<hr class="divider-thin">
+
+<!-- TEACHING EXPERIENCE -->
+<h2>Teaching Experience</h2>
+
+<div class="exp">
+  <div class="exp-header">
+    <span class="exp-title">ESL / Kindergarten Teacher</span>
+    <span class="exp-dates">2008 – 2025</span>
+  </div>
+  <div class="exp-org">SMIC Private School · Shanghai, China</div>
+  <ul>
+    <li>Taught multilingual classrooms (K–8, 20–25 students) and developed bilingual lesson plans for English Language Learners</li>
+    <li>Led adoption of Google Classroom, Canvas, SMART Boards, and Nearpod for interactive, paperless instruction</li>
+    <li>Ran restorative justice circles and goal-setting sessions, improving classroom culture and student engagement</li>
+  </ul>
+</div>
+
+<div class="exp">
+  <div class="exp-header">
+    <span class="exp-title">Substitute Teacher</span>
+    <span class="exp-dates">2001 – 2008</span>
+  </div>
+  <div class="exp-org">Montebello and Alhambra Unified, and Garvey School District · CA</div>
+</div>
+
+<!-- EDUCATION -->
+<h2>Education &amp; Credentials</h2>
+<div class="two-col">
+  <div>
+    <div class="edu">
+      <strong>M.S. Multidisciplinary Studies</strong><br>
+      <span class="school">SUNY Buffalo State University · 2014</span>
+    </div>
+    <div class="edu">
+      <strong>B.A. English Literature</strong><br>
+      <span class="school">University of California, Irvine · 2000</span>
+    </div>
+  </div>
+  <div>
+    <div class="edu">
+      <strong>CA Clear Single Subject Credential</strong><br>
+      <span class="school">University of California, Irvine</span>
+    </div>
+    <div class="edu">
+      <strong>CA Clear Multiple Subject Credential</strong><br>
+      <span class="school">University of California, Irvine</span>
+    </div>
+  </div>
+</div>
+
+<!-- LANGUAGES -->
+<p class="lang" style="margin-top:6px;"><strong>Languages:</strong> English (native) · Mandarin 普通话 (fluent) · Cantonese 粤语 (fluent)</p>
+
+</body>
+</html>

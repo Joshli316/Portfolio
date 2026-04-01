@@ -4,3 +4,4 @@
 .wrangler/
 .superpowers/
 node_modules/
+*.xlsx
