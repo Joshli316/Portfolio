@@ -306,7 +306,6 @@ nav.scrolled {
 .dot.yellow { background: #ffbd2e; }
 .dot.green { background: #27c93f; }
 
-
 /* Hero CTAs */
 .hero-ctas {
   display: flex;
@@ -673,7 +672,6 @@ nav.scrolled {
 .contact-card:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
-  transition: border-color 0.2s, transform 0.2s;
 }
 
 .contact-icon {

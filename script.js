@@ -57,10 +57,16 @@ function colorize(text, line) {
     if (colonIdx === -1) return text;
     const key = text.substring(0, colonIdx);
     const rest = text.substring(colonIdx);
-    return `<span style="color:#e06c75">${key}</span>${rest.replace(/"[^"]*"/g, m => `<span style="color:${line.valColor}">${m}</span>`).replace(/\[/g, '<span style="color:#e5c07b">[</span>').replace(/\]/g, '<span style="color:#e5c07b">]</span>')}`;
+    const highlighted = rest
+      .replace(/"[^"]*"/g, m => `<span style="color:${line.valColor}">${m}</span>`)
+      .replace(/\[/g, '<span style="color:#e5c07b">[</span>')
+      .replace(/\]/g, '<span style="color:#e5c07b">]</span>');
+    return `<span style="color:#e06c75">${key}</span>${highlighted}`;
   }
-  if (line.text.includes('const')) {
-    return text.replace('const', '<span style="color:#c678dd">const</span>').replace('profile', '<span style="color:#e5c07b">profile</span>');
+  if (text.includes('const')) {
+    return text
+      .replace('const', '<span style="color:#c678dd">const</span>')
+      .replace('profile', '<span style="color:#e5c07b">profile</span>');
   }
   return text;
 }
