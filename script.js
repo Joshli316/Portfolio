@@ -58,15 +58,15 @@ function colorize(text, line) {
     const key = text.substring(0, colonIdx);
     const rest = text.substring(colonIdx);
     const highlighted = rest
-      .replace(/"[^"]*"/g, m => `<span style="color:${line.valColor}">${m}</span>`)
-      .replace(/\[/g, '<span style="color:#e5c07b">[</span>')
-      .replace(/\]/g, '<span style="color:#e5c07b">]</span>');
-    return `<span style="color:#e06c75">${key}</span>${highlighted}`;
+      .replace(/"[^"]*"/g, m => `<span class="syn-string">${m}</span>`)
+      .replace(/\[/g, '<span class="syn-bracket">[</span>')
+      .replace(/\]/g, '<span class="syn-bracket">]</span>');
+    return `<span class="syn-key">${key}</span>${highlighted}`;
   }
   if (text.includes('const')) {
     return text
-      .replace('const', '<span style="color:#c678dd">const</span>')
-      .replace('profile', '<span style="color:#e5c07b">profile</span>');
+      .replace('const', '<span class="syn-keyword">const</span>')
+      .replace('profile', '<span class="syn-variable">profile</span>');
   }
   return text;
 }

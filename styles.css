@@ -854,6 +854,13 @@ footer {
   }
 }
 
+/* ── CODE SYNTAX HIGHLIGHTING ── */
+.syn-keyword { color: #c678dd; }
+.syn-variable { color: #e5c07b; }
+.syn-key { color: #e06c75; }
+.syn-string { color: #98c379; }
+.syn-bracket { color: #e5c07b; }
+
 /* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
