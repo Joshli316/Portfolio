@@ -11,7 +11,7 @@ Personal portfolio site for job search. Positions Z as "AI Application Developer
 ## Key Decisions (2026-03-31)
 - No logo in nav — just About/Projects/Contact links with active state on scroll
 - 4 featured case studies: Career Ready, CareNavigatorCA, QiMa, LuoJiao
-- Remaining 15 projects in compact 2-column grid with "View All on GitHub" CTA
+- Remaining 38 projects in compact 2-column grid with "View All on GitHub" CTA
 - Hero has typing animation for code snippet (respects prefers-reduced-motion)
 - English only (no bilingual toggle) — optimized for job search audience
 - Contact section: email (with subject pre-fill) + LinkedIn + GitHub cards

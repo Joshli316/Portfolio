@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zhi M. Huang — Resume</title>
   <style>
-    @page { margin: 0.35in 0.5in; size: letter; }
+    @page { margin: 0.22in 0.5in; size: letter; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
       font-size: 10pt;
-      line-height: 1.35;
+      line-height: 1.28;
       color: #1a1a1a;
       max-width: 8.5in;
       margin: 0 auto;
@@ -40,12 +40,12 @@
     .divider {
       border: none;
       border-top: 2px solid #333;
-      margin: 6px 0;
+      margin: 4px 0;
     }
     .divider-thin {
       border: none;
       border-top: 1px solid #ccc;
-      margin: 6px 0;
+      margin: 4px 0;
     }
 
     /* Section headers */
@@ -55,8 +55,8 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #1a1a1a;
-      margin-bottom: 3px;
-      margin-top: 6px;
+      margin-bottom: 2px;
+      margin-top: 4px;
     }
 
     /* Two column layout */
@@ -69,7 +69,7 @@
     /* Profile */
     .profile {
       font-size: 9.5pt;
-      line-height: 1.45;
+      line-height: 1.35;
       color: #333;
       margin-bottom: 0;
     }
@@ -78,8 +78,9 @@
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px 20px;
+      gap: 0 20px;
       font-size: 9.5pt;
+      line-height: 1.3;
     }
     .skills-grid li {
       list-style: disc;
@@ -87,7 +88,7 @@
     }
 
     /* Project entries */
-    .project { margin-bottom: 5px; }
+    .project { margin-bottom: 4px; }
     .project-header {
       display: flex;
       justify-content: space-between;
@@ -111,11 +112,12 @@
     .project ul {
       margin-left: 16px;
       font-size: 9.5pt;
+      line-height: 1.3;
     }
-    .project li { margin-bottom: 1px; }
+    .project li { margin-bottom: 0; }
 
     /* Experience entries */
-    .exp { margin-bottom: 4px; }
+    .exp { margin-bottom: 3px; }
     .exp-header {
       display: flex;
       justify-content: space-between;
@@ -127,8 +129,9 @@
     .exp ul {
       margin-left: 16px;
       font-size: 9.5pt;
+      line-height: 1.3;
     }
-    .exp li { margin-bottom: 1px; }
+    .exp li { margin-bottom: 0; }
 
     /* Education */
     .edu { margin-bottom: 3px; font-size: 9.5pt; }
@@ -169,36 +172,34 @@
 
 <!-- PROFILE -->
 <p class="profile">
-  Educator with 17 years of classroom experience who taught himself to build and ship full-stack apps using Claude Code and the Anthropic SDK. Built 32 apps — all deployed to production — including RAG pipelines, Python multi-agent systems, and MCP servers, serving international students, churches, and communities. Trilingual in English, Mandarin, and Cantonese. Combines a teacher's instinct for clarity with hands-on agentic AI development.
+  Educator with 17 years of classroom experience who taught himself to build and ship full-stack apps using Claude Code and the Anthropic SDK. Built 42 apps — all deployed to production — including RAG pipelines (vector + BM25), Python multi-agent systems, MCP servers, custom Claude Code skills, and scheduled agentic routines, serving international students, churches, immigrant workers, and employment-services clients. Trilingual in English, Mandarin, and Cantonese. Combines a teacher's instinct for clarity with hands-on agentic AI development.
 </p>
 
 <!-- TECHNICAL SKILLS -->
 <h2>Technical Skills</h2>
 <ul class="skills-grid">
-  <li>Claude Code / Claude API / Anthropic SDK</li>
-  <li>Python (multi-agent orchestration, automation)</li>
-  <li>RAG pipelines (CF Workers AI + Vectorize)</li>
-  <li>MCP server development</li>
-  <li>HTML, CSS, JavaScript, TypeScript</li>
+  <li>Claude Code (skills, hooks, sub-agents, slash commands)</li>
+  <li>Claude API / Anthropic SDK / Python multi-agent orchestration</li>
+  <li>RAG pipelines: vector + BM25 (CF Vectorize, Workers AI)</li>
+  <li>MCP server development (Python)</li>
+  <li>HTML, CSS, JavaScript, TypeScript, Tailwind v4</li>
   <li>Next.js, Node.js, Vite, esbuild</li>
-  <li>Git, GitHub</li>
-  <li>Cloudflare Pages / Workers, Wrangler CLI</li>
-  <li>Responsive design, WCAG accessibility</li>
-  <li>Bilingual i18n (EN/中文/JP)</li>
+  <li>Cloudflare Pages / Workers, Wrangler CLI, scheduled routines</li>
+  <li>Playwright automation (CLI + MCP)</li>
+  <li>Service workers / PWA, security headers (CSP, HSTS), WCAG</li>
+  <li>Bilingual i18n (EN/中文/JP/VI/KO)</li>
 </ul>
 
 <!-- AI APPLICATION DEVELOPMENT -->
-<h2>AI Application Development</h2>
-<p style="font-size:9.5pt; color:#444; margin-bottom:6px;">32 apps built and shipped with Claude Code &nbsp;·&nbsp; all deployed to production &nbsp;·&nbsp; 2025–2026</p>
+<h2>AI Application Development <span style="font-weight:400; font-size:9pt; color:#666; text-transform:none; letter-spacing:0;">— 42 apps shipped to production · 2025–2026</span></h2>
 
 <div class="project">
   <div class="project-header">
     <span class="project-name">Career Ready</span>
     <span class="project-link">careerready.pages.dev</span>
   </div>
-  <div class="project-meta">Next.js · Claude API · Bilingual EN/中文</div>
   <ul>
-    <li>Built 8 job prep modules (self-assessment, resumes, interviews, job search, offer negotiation, contact tracking) with Claude API and bilingual EN/中文 switching</li>
+    <li>8 Claude API-powered modules — self-assessment, resumes, interviews, job search, offer negotiation; Next.js, bilingual EN/中文</li>
   </ul>
 </div>
 
@@ -207,9 +208,8 @@
     <span class="project-name">CareNavigatorCA</span>
     <span class="project-link">care-navigator.pages.dev</span>
   </div>
-  <div class="project-meta">HTML/JS · Accessibility-focused · 100+ programs database</div>
   <ul>
-    <li>Created a 5-step eligibility quiz matching Californians with disabilities to 100+ government programs; screen-reader tested and keyboard-navigable</li>
+    <li>5-step eligibility quiz matching Californians with disabilities to 100+ government programs; WCAG-compliant, screen-reader tested</li>
   </ul>
 </div>
 
@@ -218,9 +218,8 @@
     <span class="project-name">AI Bible Study Assistant</span>
     <span class="project-link">ai-bible-study-assistant.pages.dev</span>
   </div>
-  <div class="project-meta">CF Workers AI · CF Vectorize · RAG · Bilingual EN/中文</div>
   <ul>
-    <li>Built end-to-end RAG pipeline: OCR'd 567 commentary PDFs → 279K vector chunks → Cloudflare Workers AI embeddings → bilingual semantic search frontend</li>
+    <li>End-to-end RAG: OCR'd 567 commentary PDFs → 279K vector chunks → CF Workers AI embeddings → bilingual semantic search frontend</li>
   </ul>
 </div>
 
@@ -229,14 +228,13 @@
     <span class="project-name">Missionary Launchpad Agent</span>
     <span class="project-link">github.com/Joshli316/Missionary-Launchpad-Agent</span>
   </div>
-  <div class="project-meta">Python · Anthropic SDK · Multi-agent orchestration · 44 tests</div>
   <ul>
-    <li>Rebuilt Missionary Launchpad as a Python CLI multi-agent system — orchestrator coordinating 4 specialized sub-agents using the Anthropic SDK; 44 automated tests</li>
+    <li>Python CLI multi-agent system — orchestrator + 4 specialized sub-agents via Anthropic SDK; 44 automated tests</li>
   </ul>
 </div>
 
-<p style="font-size:9pt; color:#555; margin-top:2px;">
-  <strong>Also shipped:</strong> XuanYan (China missions AI research platform), Sendō (Japan missions), Yi 易 suite (4 bilingual tools: taxes, work auth, immigration, insurance), Bible Comics (44-series mobile comic Bible), QiMa (14-day Claude Code tutorial), LuoJiao (cultural map), AgentPath, Prayer Journal, and 14 more — all on <a href="https://github.com/Joshli316" style="color:#555;">GitHub</a>.
+<p style="font-size:8.5pt; color:#555; margin-top:2px; line-height:1.4;">
+  <strong>Also shipped:</strong> Asia missions quartet (XuanYan/Sendō/TruyềnĐạo/SeonMun); Yi 易 suite + hub (taxes, work auth, immigration, insurance); 5 bilingual CSC employment workshops + hub; WorkKit (employment-specialist toolbox, 166 resources); MaDao + GitMa (Claude Code tutorials); Bible Comics (44-series); QiMa, LuoJiao, AgentPath, Prayer Journal; and 15 more — all on <a href="https://github.com/Joshli316" style="color:#555;">GitHub</a>.
 </p>
 
 <hr class="divider-thin">
@@ -246,10 +244,25 @@
 
 <div class="exp">
   <div class="exp-header">
-    <span class="exp-title">Prototyping Engineer</span>
-    <span class="exp-dates">2026</span>
+    <span class="exp-title">Employment Outreach Specialist</span>
+    <span class="exp-dates">2026 – present</span>
+  </div>
+  <div class="exp-org">Chinatown Service Center · Los Angeles, CA</div>
+  <ul>
+    <li>Built WorkKit (workkit.pages.dev) — internal staff toolbox with 166 resources, 14 AI prompt templates, 5 bilingual workshop slide decks, and a 43-organization SGV partner directory</li>
+    <li>Designed and shipped 5 bilingual EN/中文 employment workshops (Resume, Job Search, Interview Skills, Worker Rights, Career Pathways) plus a public hub site (csc-workshops.pages.dev) for participants and facilitators</li>
+  </ul>
+</div>
+
+<div class="exp">
+  <div class="exp-header">
+    <span class="exp-title">Prototype Fellow</span>
+    <span class="exp-dates">2026 – present</span>
   </div>
   <div class="exp-org">Frontier Commons Innovation Lab</div>
+  <ul>
+    <li>Prototype and ship AI-driven web tools for international student welcome flows, campus missionaries, and church ministry teams — including Welcome Hub, ISM In A Box, Ministry Starter Pack, and Uncover</li>
+  </ul>
 </div>
 
 <div class="exp">
@@ -259,18 +272,9 @@
   </div>
   <div class="exp-org">SMIC Private School · Shanghai, China</div>
   <ul>
-    <li>Taught multilingual classrooms (K–8, 20–25 students) and developed bilingual lesson plans for English Language Learners</li>
+    <li>Taught multilingual K–8 classrooms (20–25 students); developed bilingual lesson plans for English Language Learners</li>
     <li>Led adoption of Google Classroom, Canvas, SMART Boards, and Nearpod for interactive, paperless instruction</li>
-    <li>Ran restorative justice circles and goal-setting sessions, improving classroom culture and student engagement</li>
   </ul>
-</div>
-
-<div class="exp">
-  <div class="exp-header">
-    <span class="exp-title">Substitute Teacher</span>
-    <span class="exp-dates">2001 – 2008</span>
-  </div>
-  <div class="exp-org">Montebello and Alhambra Unified, and Garvey School District · CA</div>
 </div>
 
 <!-- EDUCATION -->
